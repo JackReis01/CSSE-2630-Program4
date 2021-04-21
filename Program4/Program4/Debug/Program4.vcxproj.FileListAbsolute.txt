@@ -1,0 +1,3 @@
+R:\Programs\C++\Program4\Program4\Debug\Program4.vcxprojAssemblyReference.cache
+R:\Programs\C++\Program4\Program4\Debug\Program4.Form1.resources
+R:\Programs\C++\Program4\Program4\Debug\Program4.vcxproj.GenerateResource.cache
