@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "MineSweeper.h"
+#include <iostream>
 
 
 MineSweeper::MineSweeper(int level, Panel^ drawingPanel)
@@ -109,13 +110,69 @@ void MineSweeper::Reveal(int row, int col)
 
 
 
+	if (game->GetCell(row, col) == INIT)
+	{
+		int cell = mines->GetCell(row, col);
+		if (cell == -1)
+		{
+			game->SetCell(row, col, -1);
+			ShowMines();
+			CheckWin();
 
 
+		}
+		else
+		{
+			game->SetCell(row, col, AdjacentMineCount(row, col));
+			
+			if (AdjacentMineCount(row, col) == 0)
+			{
+				// Left
+				if (AdjacentMineCount(row - 1, col) == 0)
+				{
+					Reveal(row - 1, col);
+				}
+				// Down
+				if (AdjacentMineCount(row, col - 1) == 0)
+				{
+					Reveal(row, col - 1);
+				}
+				// Down and Left
+				if (AdjacentMineCount(row - 1, col - 1) == 0)
+				{
+					Reveal(row - 1, col - 1);
+				}
+				// Down and Right
+				if (AdjacentMineCount(row - 1, col + 1) == 0)
+				{
+					Reveal(row - 1, col + 1);
+				}
+				// Right
+				if (AdjacentMineCount(row + 1, col) == 0)
+				{
+					Reveal(row + 1, col);
+				}
+				// Up
+				if (AdjacentMineCount(row, col + 1) == 0)
+				{
+					Reveal(row, col + 1);
+				}
+				// Up and Right
+				if (AdjacentMineCount(row + 1, col + 1) == 0)
+				{
+					Reveal(row + 1, col + 1);
+				}
+				// Up and Left
+				if (AdjacentMineCount(row - 1, col + 1) == 0)
+				{
+					Reveal(row - 1, col + 1);
+				}
+			}
+		}
 
+	}
 
-
-
-
+	Show();
 
 }
 

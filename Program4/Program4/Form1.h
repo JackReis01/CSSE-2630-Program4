@@ -55,7 +55,6 @@ namespace CppCLRWinformsProjekt {
 		/// <summary>
 		/// Erforderliche Designervariable.
 		/// </summary>
-		//System::ComponentModel::Container ^components;
 		MineSweeper* game;
 		bool clickable;
 
@@ -130,7 +129,7 @@ namespace CppCLRWinformsProjekt {
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(890, 34);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(148, 29);
+			this->label1->Size = System::Drawing::Size(119, 25);
 			this->label1->TabIndex = 4;
 			this->label1->Text = L"Mines Left:";
 			this->label1->Visible = false;
@@ -142,7 +141,7 @@ namespace CppCLRWinformsProjekt {
 				static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(890, 74);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(87, 29);
+			this->label2->Size = System::Drawing::Size(70, 25);
 			this->label2->TabIndex = 5;
 			this->label2->Text = L"label2";
 			this->label2->Visible = false;
@@ -154,7 +153,7 @@ namespace CppCLRWinformsProjekt {
 				static_cast<System::Byte>(0)));
 			this->label3->Location = System::Drawing::Point(890, 161);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(136, 29);
+			this->label3->Size = System::Drawing::Size(109, 25);
 			this->label3->TabIndex = 6;
 			this->label3->Text = L"Time Left:";
 			this->label3->Visible = false;
@@ -166,7 +165,7 @@ namespace CppCLRWinformsProjekt {
 				static_cast<System::Byte>(0)));
 			this->label4->Location = System::Drawing::Point(890, 203);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(87, 29);
+			this->label4->Size = System::Drawing::Size(70, 25);
 			this->label4->TabIndex = 7;
 			this->label4->Text = L"label4";
 			this->label4->Visible = false;
@@ -178,7 +177,7 @@ namespace CppCLRWinformsProjekt {
 				static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(894, 287);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(132, 29);
+			this->label5->Size = System::Drawing::Size(106, 25);
 			this->label5->TabIndex = 8;
 			this->label5->Text = L"Big Bang!";
 			this->label5->Visible = false;
@@ -191,14 +190,14 @@ namespace CppCLRWinformsProjekt {
 			this->label6->ForeColor = System::Drawing::SystemColors::WindowText;
 			this->label6->Location = System::Drawing::Point(894, 325);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(123, 29);
+			this->label6->Size = System::Drawing::Size(101, 25);
 			this->label6->TabIndex = 9;
 			this->label6->Text = L"You Win!";
 			this->label6->Visible = false;
 			// 
 			// Form1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(7, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1086, 563);
 			this->Controls->Add(this->label6);
@@ -214,11 +213,13 @@ namespace CppCLRWinformsProjekt {
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ForeColor = System::Drawing::SystemColors::WindowText;
-			this->Name = L"MyForm";
+			this->Name = L"Form1";
 			this->Text = L"MyForm";
 			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &Form1::Form1_FormClosed);
+			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load_1);
 			this->ResumeLayout(false);
 			this->PerformLayout();
+
 		}
 #pragma endregion
 		private: void InitializeGame()
@@ -302,5 +303,7 @@ namespace CppCLRWinformsProjekt {
 
 	private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+	private: System::Void Form1_Load_1(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
